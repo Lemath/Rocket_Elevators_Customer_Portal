@@ -18,7 +18,7 @@ namespace Rocket_Elevators_Customer_Portal.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             return View();

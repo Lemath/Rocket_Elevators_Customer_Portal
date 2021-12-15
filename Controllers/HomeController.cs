@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Rocket_Elevators_Customer_Portal.Models;
@@ -27,6 +28,11 @@ namespace Rocket_Elevators_Customer_Portal.Controllers
         {
             return View();
         }
+        // [Authorize]
+        // public IActionResult CustomerIndex()
+        // {
+        //     return View();
+        // }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

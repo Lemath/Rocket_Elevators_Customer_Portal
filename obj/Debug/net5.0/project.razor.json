@@ -15689,11 +15689,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Home/CustomerIndex.cshtml",
-      "TargetPath": "Views\\Home\\CustomerIndex.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Shared/_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"

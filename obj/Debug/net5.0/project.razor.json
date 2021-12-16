@@ -15769,11 +15769,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmailChange.cshtml",
       "FileKind": "mvc"

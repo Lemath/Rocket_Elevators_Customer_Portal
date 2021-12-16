@@ -206,3 +206,6 @@
 /home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
 /home/lemath/Rocket_Elevators_Customer_Portal/bin/Debug/net5.0/System.Net.Http.Formatting.dll
 /home/lemath/Rocket_Elevators_Customer_Portal/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Battery/Index.cshtml.g.cs
+/home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Column/Index.cshtml.g.cs
+/home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Elevator/Index.cshtml.g.cs

@@ -15619,6 +15619,11 @@
   "RootNamespace": "Rocket_Elevators_Customer_Portal",
   "Documents": [
     {
+      "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Elevator/Index.cshtml",
+      "TargetPath": "Views\\Elevator\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Areas/Identity/Pages/Account/Manage/Index.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
       "FileKind": "mvc"
@@ -15814,6 +15819,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Battery/Index.cshtml",
+      "TargetPath": "Views\\Battery\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
       "FileKind": "mvc"
@@ -15826,6 +15836,11 @@
     {
       "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/lemath/Rocket_Elevators_Customer_Portal/Views/Column/Index.cshtml",
+      "TargetPath": "Views\\Column\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

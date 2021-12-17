@@ -2,6 +2,34 @@
     ViewData["Title"] = "Battery";
 }
 
-<h2>Battery</h2>
+<h2 class="text-center">Your Batteries</h2>
+<div class="table-responsive">
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Building</th>
+        <th scope="col">Status</th>
+        <th scope="col">Employee</th>
+        <th scope="col">Operation Certificate</th>
+        <th scope="col">Information</th>
+        <th scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach (var battery in ViewBag.Batteries)
+    {
+      <tr>
+        <td>@battery.Id</td>
+        <td>@battery.building_id</td>
+        <td>@battery.status</td>
+        <td>@battery.employee_id</td>
+        <td>@battery.Operation_Certificate</td>
+        <td>@battery.Information</td>
+        <td>@battery.Notes</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
 
-<p>Hello from our View Template!</p>

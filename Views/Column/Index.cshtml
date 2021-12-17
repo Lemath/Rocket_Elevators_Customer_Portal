@@ -1,7 +1,33 @@
 @{
     ViewData["Title"] = "Column";
 }
-
-<h2>Column</h2>
-
-<p>Hello from our View Template!</p>
+<h2 class="text-center">Your Columns</h2>
+<div class="table-responsive">
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Battery ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Type of Building</th>
+        <th scope="col">Number of Floor Served</th>
+        <th scope="col">Information</th>
+        <th scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach (var column in ViewBag.Columns)
+    {
+      <tr>
+        <td>@column.Id</td>
+        <td>@column.battery_id</td>
+        <td>@column.status</td>
+        <td>@column.type_of_building</td>
+        <td>@column.number_of_floors_served</td>
+        <td>@column.information</td>
+        <td>@column.notes</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,41 @@
 @{
     ViewData["Title"] = "Elevator";
 }
-
-<h2>Elevator</h2>
-
-<p>Hello from our View Template!</p>
+<h2 class="text-center">Your Elevators</h2>
+<div class="table-responsive">
+  <table class="table table-striped text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Column ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Serial Number</th>
+        <th scope="col">Model</th>
+        <th scope="col">Type of Building</th>
+        <th scope="col">Information</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Date of Commissioning</th>
+        <th scope="col">Date of Last Inspection</th>
+        <th scope="col">Certificate of Inspection</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach (var elevator in ViewBag.Elevators)
+    {
+      <tr>
+        <td>@elevator.Id</td>
+        <td>@elevator.column_id</td>
+        <td>@elevator.status</td>
+        <td>@elevator.serial_number</td>
+        <td>@elevator.model</td>
+        <td>@elevator.type_of_building</td>
+        <td>@elevator.information</td>
+        <td>@elevator.notes</td>
+        <td>@elevator.date_of_commissioning</td>
+        <td>@elevator.date_of_last_inspection</td>
+        <td>@elevator.certificate_of_inspection</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>

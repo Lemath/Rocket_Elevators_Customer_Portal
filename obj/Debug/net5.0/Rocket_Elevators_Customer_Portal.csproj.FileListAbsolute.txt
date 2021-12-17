@@ -209,3 +209,5 @@
 /home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Battery/Index.cshtml.g.cs
 /home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Column/Index.cshtml.g.cs
 /home/lemath/Rocket_Elevators_Customer_Portal/obj/Debug/net5.0/Razor/Views/Elevator/Index.cshtml.g.cs
+/home/lemath/Rocket_Elevators_Customer_Portal/bin/Debug/net5.0/System.DirectoryServices.dll
+/home/lemath/Rocket_Elevators_Customer_Portal/bin/Debug/net5.0/runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.dll

@@ -81,6 +81,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[5.0.3, )"
+            },
+            "System.DirectoryServices": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

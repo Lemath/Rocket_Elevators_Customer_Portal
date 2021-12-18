@@ -1,0 +1,65 @@
+
+
+@{
+    ViewData["Title"] = "Intervention Form";
+}
+
+<h2>Hello Potato!</h2>
+<form method="POST">
+  <div class="form-group" hidden>
+    <input type="number" class="form-control" id="author_id" value="" name="author_id">
+  </div>
+  <div class="form-group" hidden>
+    <input type="number" class="form-control" id="customer_id" value="" name="customer_id">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Building</label>
+    <select class="form-control" id="building_id" name="building_id">
+      <option>1</option>
+    </select>
+  </div>
+  <div class="form-group" hidden>
+    <label for="exampleFormControlSelect1">Select Battery</label>
+    <select class="form-control" id="battery_id" name="battery_id">
+      <option>1</option>
+    </select>
+  </div>
+  <div class="form-group" hidden>
+    <label for="exampleFormControlSelect1">Select Column</label>
+    <select class="form-control" id="column_id" name="column_id">
+      <option>None</option>
+    </select>
+  </div>
+  <div class="form-group" hidden>
+    <label for="exampleFormControlSelect1">Select Elevator</label>
+    <select class="form-control" id="elevator_id" name="elevator_id">
+      <option>None</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Employee</label>
+    <select class="form-control" id="employee_id" name="employee_id">
+      <option>None</option>
+    </select>
+  </div>
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="start" name="start" value="">
+  </div>
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="end" name="end" value="">
+  </div>
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="result" name="result" value="Incomplete">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" name="description" value="">
+  </div>
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="status" name="status"value="Pending">
+  </div>
+  <div>
+    <label>Submit</label>
+    <input type="submit" value="Submit" class="submit" />
+  </div>
+</form>

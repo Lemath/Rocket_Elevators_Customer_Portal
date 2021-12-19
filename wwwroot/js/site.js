@@ -3,123 +3,112 @@
 
 // Write your JavaScript code.
 
-$(document).ready(() => {
+$(document).ready(() => 
+{
 
-  $("#hidden_field").children().children().prop("hidden", true);
+	$("#hidden_field").children().children().prop("hidden", true);
 
-  // $("#intervention_customer_id").change((event) => {
 
-  //   $("#intervention_battery_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   $("#intervention_column_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   $("#intervention_elevator_id").prop("hidden", true).siblings().prop("hidden", true);
+	$("#building_id").change((event) => 
+	{
 
-  //   let customer = $(event.currentTarget).val();
-  //   if (customer == '') {
-  //     $("#intervention_building_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   } else {
-  //     $("#intervention_building_id").prop("hidden", false).siblings().prop("hidden", false);
-  //   }
+		$("#column_id").parent().prop("hidden", true);
+		$("#elevator_id").parent().prop("hidden", true);
 
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/buildings",
-  //     dataType: "json",
-  //     data: {customer: customer},
-  //     error: function (xhr, status, error) {
-  //       console.error('AJAX Error: ' + status + error);
-  //     },
-  //     success: (response) => {
-  //       let buildings = response.buildings;
-  //       $("#intervention_building_id").empty();
-  //       $("#intervention_building_id").append('<option value="">Building Required</option>');
-  //       for (let i = 0; i < buildings.length; i++) {
-  //         $("#intervention_building_id").append(`<option value="${buildings[i].id}">${buildings[i].id}</option>`);
-  //       }
-  //     }
-  //   });
-  // });
+		let building_id = $(event.currentTarget).val();
+		if (building_id == '') 
+		{
+			$("#battery_id").parent().prop("hidden", true);
+		} 
+		else 
+		{
+			$("#battery_id").parent().prop("hidden", false);
+		}
+		console.log(building_id)
+		$.ajax({
+			type: "GET",
+			url: 'Battery/BatteryOfBuilding',
+			dataType: "json",
+			data: {id: building_id},
+			error: function (xhr, status, error) 
+			{
+				console.error('AJAX Error: ' + status + error);
+			},
+			success: (response) => 
+			{
+				console.log(response);
+				
+				$("#battery_id").empty();
+				$("#battery_id").append('<option value="">Battery Required</option>');
+				for (let i = 0; i < response.length; i++) 
+				{
+					$("#battery_id").append(`<option value="${response[i]}">${response[i]}</option>`);
+				}
+			}
+		});
+	});
 
-  // $("#intervention_building_id").change((event) => {
-
-  //   $("#intervention_column_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   $("#intervention_elevator_id").prop("hidden", true).siblings().prop("hidden", true);
-
-  //   let building = $(event.currentTarget).val();
-  //   if (building == '') {
-  //     $("#intervention_battery_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   } else {
-  //     $("#intervention_battery_id").prop("hidden", false).siblings().prop("hidden", false);
-  //   }
-
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/batteries",
-  //     dataType: "json",
-  //     data: {building: building},
-  //     error: function (xhr, status, error) {
-  //       console.error('AJAX Error: ' + status + error);
-  //     },
-  //     success: (response) => {
-  //       let batteries = response.batteries;
-  //       $("#intervention_battery_id").empty();
-  //       $("#intervention_battery_id").append('<option value="">Battery Required</option>');
-  //       for (let i = 0; i < batteries.length; i++) {
-  //         $("#intervention_battery_id").append(`<option value="${batteries[i].id}">${batteries[i].id}</option>`);
-  //       }
-  //     }
-  //   });
-  // });
-
-  // $("#intervention_battery_id").change((event) => {
-  //   $("#intervention_elevator_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   let battery = $(event.currentTarget).val();
-  //   if (battery == '') {
-  //     $("#intervention_column_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   } else {
-  //     $("#intervention_column_id").prop("hidden", false).siblings().prop("hidden", false);
-  //   }
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/columns",
-  //     dataType: "json",
-  //     data: {battery: battery},
-  //     error: function (xhr, status, error) {
-  //       console.error('AJAX Error: ' + status + error);
-  //     },
-  //     success: (response) => {
-  //       let columns = response.columns;
-  //       $("#intervention_column_id").empty();
-  //       $("#intervention_column_id").append('<option value="">None</option>');
-  //       for (let i = 0; i < columns.length; i++) {
-  //         $("#intervention_column_id").append(`<option value="${columns[i].id}">${columns[i].id}</option>`);
-  //       }
-  //     }
-  //   });
-  // });
-  
-  // $("#intervention_column_id").change((event) => {
-  //   let column = $(event.currentTarget).val();
-  //   if (column == '') {
-  //     $("#intervention_elevator_id").prop("hidden", true).siblings().prop("hidden", true);
-  //   } else {
-  //     $("#intervention_elevator_id").prop("hidden", false).siblings().prop("hidden", false);
-  //   }
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/elevators",
-  //     dataType: "json",
-  //     data: {column: column},
-  //     error: function (xhr, status, error) {
-  //       console.error('AJAX Error: ' + status + error);
-  //     },
-  //     success: (response) => {
-  //       let elevators = response.elevators;
-  //       $("#intervention_elevator_id").empty();
-  //       $("#intervention_elevator_id").append('<option value="">None</option>');
-  //       for (let i = 0; i < elevators.length; i++) {
-  //         $("#intervention_elevator_id").append(`<option value="${elevators[i].id}">${elevators[i].id}</option>`);
-  //       }
-  //     }
-  //   });
-  // });
+	$("#battery_id").change((event) => 
+	{
+		$("#elevator_id").parent().prop("hidden", true)
+		let battery_id = $(event.currentTarget).val();
+		if (battery_id == '') 
+		{
+			$("#column_id").parent().prop("hidden", true)
+		} 
+		else 
+		{
+			$("#column_id").parent().prop("hidden", false)
+		}
+		$.ajax({
+			method: "GET",
+			url: "Column/ColumnOfBattery",
+			dataType: "json",
+			data: {id: battery_id},
+			error: function (xhr, status, error) 
+			{
+				console.error('AJAX Error: ' + status + error);
+			},
+			success: (response) => {
+				$("#column_id").empty();
+				$("#column_id").append('<option value="">None</option>');
+				for (let i = 0; i < response.length; i++) 
+				{
+					$("#column_id").append(`<option value="${response[i]}">${response[i]}</option>`);
+				}
+			}
+		});
+	});
+	
+	$("#column_id").change((event) => 
+	{
+		console.log("column change")	
+		let column_id = $(event.currentTarget).val();
+		if (column_id == '') 
+		{
+			$("#elevator_id").parent().prop("hidden", true);
+		} 
+		else 
+		{
+			$("#elevator_id").parent().prop("hidden", false);
+		}
+	  	$.ajax({
+			method: "GET",
+			url: "Elevator/ElevatorOfColumn",
+			dataType: "json",
+			data: {id: column_id},
+			error: function (xhr, status, error) 
+			{
+				console.error('AJAX Error: ' + status + error);
+			},
+			success: (response) => {
+				$("#elevator_id").empty();
+				$("#elevator_id").append('<option value="">None</option>');
+				for (let i = 0; i < response.length; i++) 
+				{
+					$("#elevator_id").append(`<option value="${response[i]}">${response[i]}</option>`);
+				}
+			}
+	  	});
+	});
 });

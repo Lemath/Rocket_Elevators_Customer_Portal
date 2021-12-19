@@ -30,5 +30,27 @@ namespace Rocket_Elevators_Customer_Portal.Controllers
 			ViewBag.Elevators = elevators;
       return View();
     }
+
+    [HttpGet]
+		public async Task<List<long>> ElevatorOfColumn(long id)
+		{
+			Console.WriteLine(id);
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("https://localhost:5001/");
+			var get_elevators = await client.GetAsync($"https://rocketelevator-restapi.herokuapp.com/api/Elevators/GetByColumn/{id}");
+			var elevator_list = JArray.Parse(await get_elevators.Content.ReadAsStringAsync());
+			var elevators = new List<long>();
+			Console.WriteLine("parsed list");
+			Console.WriteLine(elevator_list);
+			foreach (var elevator in elevator_list)
+			{
+				var elevator_to_object = elevator.ToObject<Elevator>();
+				Console.WriteLine("to object");
+				Console.WriteLine(elevator_to_object);
+				elevators.Add(elevator_to_object.Id);
+			}
+			
+			return elevators;
+		}
   }
 }

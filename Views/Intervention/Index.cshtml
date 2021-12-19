@@ -1,65 +1,74 @@
-
+@model Intervention
 
 @{
-    ViewData["Title"] = "Intervention Form";
+		ViewData["Title"] = "Intervention Form";
 }
 
-<h2>Hello Potato!</h2>
+<h2>Intervention</h2>
 <form method="POST">
-  <div class="form-group" hidden>
-    <input type="number" class="form-control" id="author_id" value="" name="author_id">
-  </div>
-  <div class="form-group" hidden>
-    <input type="number" class="form-control" id="customer_id" value="" name="customer_id">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Select Building</label>
-    <select class="form-control" id="building_id" name="building_id">
-      <option>1</option>
-    </select>
-  </div>
-  <div class="form-group" hidden>
-    <label for="exampleFormControlSelect1">Select Battery</label>
-    <select class="form-control" id="battery_id" name="battery_id">
-      <option>1</option>
-    </select>
-  </div>
-  <div class="form-group" hidden>
-    <label for="exampleFormControlSelect1">Select Column</label>
-    <select class="form-control" id="column_id" name="column_id">
-      <option>None</option>
-    </select>
-  </div>
-  <div class="form-group" hidden>
-    <label for="exampleFormControlSelect1">Select Elevator</label>
-    <select class="form-control" id="elevator_id" name="elevator_id">
-      <option>None</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Select Employee</label>
-    <select class="form-control" id="employee_id" name="employee_id">
-      <option>None</option>
-    </select>
-  </div>
-  <div class="form-group" hidden>
-    <input type="text" class="form-control" id="start" name="start" value="">
-  </div>
-  <div class="form-group" hidden>
-    <input type="text" class="form-control" id="end" name="end" value="">
-  </div>
-  <div class="form-group" hidden>
-    <input type="text" class="form-control" id="result" name="result" value="Incomplete">
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" value="">
-  </div>
-  <div class="form-group" hidden>
-    <input type="text" class="form-control" id="status" name="status"value="Pending">
-  </div>
-  <div>
-    <label>Submit</label>
-    <input type="submit" value="Submit" class="submit" />
-  </div>
+	<div class="form-group" hidden>
+		<input type="number" class="form-control" id="author_id" value="@ViewData["id"]" name="author_id">
+	</div>
+	<div class="form-group" hidden>
+		<input type="number" class="form-control" id="customer_id" value="@ViewData["id"]" name="customer_id">
+	</div>
+	<p>@ViewBag.buildings</p>
+	<div class="form-group">
+		<label for="building_id">Select Building</label>
+		<select asp-for="building_id" asp-items="@ViewBag.building_id">
+			<option value="">Select Building</option>
+		</select>
+		@* @Html.DropDownList("building_id", ViewBag.building_id, "Select Building", new { @class ="form-control" }) *@
+	</div>
+	<div class="form-group" hidden>
+		<label for="battery_id">Select Battery</label>
+		<select class="form-control" id="battery_id" name="battery_id">
+			<option>Battery Required</option>
+		</select>
+	</div>
+	<div class="form-group" hidden>
+		<label for="column_id">Select Column</label>
+		<select class="form-control" id="column_id" name="column_id">
+			<option>None</option>
+		</select>
+	</div>
+	<div class="form-group" hidden>
+		<label for="elevator_id">Select Elevator</label>
+		<select class="form-control" id="elevator_id" name="elevator_id">
+			<option>None</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="employee_id">Select Employee</label>
+		<select class="form-control" id="employee_id" name="employee_id">
+			<option >None</option>
+			<select asp-for="employee_id" asp-items="@ViewBag.employees">
+				<option value="">None</option>
+			</select>
+			@* @foreach (Employee employee in ViewBag.Employees)
+			{
+				<option value="@employee.id">@employee.first_name @employee.last_name</option>
+			} *@
+		</select>
+	</div>
+	<div class="form-group" hidden>
+		<input type="text" class="form-control" id="start" name="start" value="">
+	</div>
+	<div class="form-group" hidden>
+		<input type="text" class="form-control" id="end" name="end" value="">
+	</div>
+	<div class="form-group" hidden>
+		<input type="text" class="form-control" id="result" name="result" value="Incomplete">
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<input type="text" class="form-control" id="description" name="description" value="">
+	</div>
+	<div class="form-group" hidden>
+		<input type="text" class="form-control" id="status" name="status"value="Pending">
+	</div>
+	<div>
+		<label>Submit</label>
+		<input type="submit" value="Submit" class="submit" />
+	</div>
 </form>

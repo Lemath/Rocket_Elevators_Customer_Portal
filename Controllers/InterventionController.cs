@@ -38,20 +38,20 @@ namespace Rocket_Elevators_Customer_Portal.Controllers
 				var building_to_object = building.ToObject<Building>();
 				buildings.Add(building_to_object.Id);
 			}
-			var employees_list_response = await client.GetAsync($"https://rocketelevator-restapi.herokuapp.com/api/Employees");
-			var employees_list = JArray.Parse(await employees_list_response.Content.ReadAsStringAsync());
-			IEnumerable<object> employees = Enumerable.Empty<object>();;
-			foreach (var employee in employees_list)
-			{
-				var employee_to_object = employee.ToObject<Employee>();
-				employees = employees.Concat(new)
-				employees.Add(employee_to_object.id);
-				(employee_to_object.first_name + ' ' + employee_to_object.last_name);
-			}
+			// var employees_list_response = await client.GetAsync($"https://rocketelevator-restapi.herokuapp.com/api/Employees");
+			// var employees_list = JArray.Parse(await employees_list_response.Content.ReadAsStringAsync());
+			// IEnumerable<object> employees = Enumerable.Empty<object>();;
+			// foreach (var employee in employees_list)
+			// {
+			// 	var employee_to_object = employee.ToObject<Employee>();
+			// 	employees = employees.Concat(new)
+			// 	employees.Add(employee_to_object.id);
+			// 	(employee_to_object.first_name + ' ' + employee_to_object.last_name);
+			// }
 			ViewData["id"] = customer_id;
 			ViewBag.building_id = new SelectList(buildings);
-			ViewBag.employees_id = new SelectList(employees_id);
-			ViewBag.employees_name = new SelectList(employees_name);
+			// ViewBag.employees_id = new SelectList(employees_id);
+			// ViewBag.employees_name = new SelectList(employees_name);
 			return View();
 		}
 

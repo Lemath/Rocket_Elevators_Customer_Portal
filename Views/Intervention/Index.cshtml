@@ -41,21 +41,43 @@
 	<div class="form-group">
 		<label for="employee_id">Select Employee</label>
 		<select class="form-control" id="employee_id" name="employee_id">
-			<option >None</option>
-			<select asp-for="employee_id" asp-items="@ViewBag.employees">
+			<option value="">None</option>
+			<option value="1">Nicolas Genest</option>
+			<option value="2">Nadia Fortier</option>
+			<option value="3">Martin Chantal</option>
+			<option value="4">Mathieu Houde</option>
+			<option value="5">Patrick Thibault</option>
+			<option value="6">David Boutin</option>
+			<option value="7">Mathieu Lortie</option>
+			<option value="8">Thomas Carrier</option>
+			<option value="9">Serge Savoie</option>
+			<option value="10">Francis Patry-Jessop</option>
+			<option value="11">Mathieu Lefrancois</option>
+			<option value="12">David Larochelle</option>
+			<option value="13">Nicolas Pineault</option>
+			<option value="14">David Amyot</option>
+			<option value="15">Remi Gagnon</option>
+			<option value="16">Timothy Wever</option>
+			<option value="17">Kiril Kleinerman</option>
+			<option value="18">Emmanuela Derilus</option>
+			<option value="19">Abdul Akeeb</option>
+			<option value="20">Krista Sheely</option>
+			<option value="21">Jonathan Murray</option>
+	
+			@* <select asp-for="employee_id" asp-items="@ViewBag.employees">
 				<option value="">None</option>
 			</select>
-			@* @foreach (Employee employee in ViewBag.Employees)
+			@foreach (Employee employee in ViewBag.Employees)
 			{
 				<option value="@employee.id">@employee.first_name @employee.last_name</option>
 			} *@
 		</select>
 	</div>
 	<div class="form-group" hidden>
-		<input type="text" class="form-control" id="start" name="start" value="">
+		<input type="text" class="form-control" id="start" name="start" value="null">
 	</div>
 	<div class="form-group" hidden>
-		<input type="text" class="form-control" id="end" name="end" value="">
+		<input type="text" class="form-control" id="end" name="end" value="null">
 	</div>
 	<div class="form-group" hidden>
 		<input type="text" class="form-control" id="result" name="result" value="Incomplete">

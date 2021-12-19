@@ -14,7 +14,7 @@ namespace Rocket_Elevators_Customer_Portal.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            var connectionString = "server=localhost;user=lemath;password=kintaro1;database=CustomerApp";
+            var connectionString = "server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com; port=3306; database=MathieuGagnonCustomer; uid=codeboxx; password=Codeboxx1!;";
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<Rocket_Elevators_Customer_PortalIdentityDbContext>(options =>
